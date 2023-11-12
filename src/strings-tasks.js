@@ -75,10 +75,10 @@ function concatenateStrings(value1, value2) {
  *   getFirstChar('cat') => 'c'
  *   getFirstChar('') => ''
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(value) {
+  return value ? value.charAt(0) : '';
 }
-// [ ] To do
+// [x] Ready
 /**
  * Removes leading and trailing whitespace characters from the string.
  *
@@ -90,10 +90,10 @@ function getFirstChar(/* value */) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  return value.trim();
 }
-// [ ] To do
+// [x] Ready
 /**
  * Removes only leading whitespace characters from the string.
  *
@@ -105,10 +105,10 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   removeLeadingWhitespaces('cat ') => 'cat '
  *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
-function removeLeadingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingWhitespaces(value) {
+  return value.trimStart();
 }
-// [ ] To do
+// [x] Ready
 /**
  * Removes only trailing whitespace characters from the string.
  *
@@ -120,10 +120,10 @@ function removeLeadingWhitespaces(/* value */) {
  *   removeTrailingWhitespaces('cat ') => 'cat'
  *   removeTrailingWhitespaces('\t\t\tHello, World! ') => '\t\t\tHello, World!'
  */
-function removeTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeTrailingWhitespaces(value) {
+  return value.trimEnd();
 }
-// [ ] To do
+// [x] Ready
 /**
  * Returns a string that is repeated the specified number of times.
  *
@@ -137,10 +137,10 @@ function removeTrailingWhitespaces(/* value */) {
  *   repeatString('', 3) => ''
  *   repeatString('abc', -2) => ''
  */
-function repeatString(/* str, times */) {
-  throw new Error('Not implemented');
+function repeatString(str, times) {
+  return str && times > 0 ? str.repeat(times) : '';
 }
-// [ ] To do
+// [x] Ready
 /**
  * Remove the first occurrence of a substring from a string.
  *
@@ -153,10 +153,21 @@ function repeatString(/* str, times */) {
  *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  const valIndex = str.indexOf(value);
+  const string =
+    str.substr(0, valIndex) + str.substr(valIndex + value.length, str.length);
+  let result;
+  if (str && valIndex >= 0) {
+    result = string;
+  } else if (valIndex < 0) {
+    result = str;
+  } else {
+    result = '';
+  }
+  return result;
 }
-// [ ] To do
+// [x] Ready
 /**
  * Remove the last occurrence of a substring from a string.
  *
