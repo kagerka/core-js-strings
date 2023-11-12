@@ -19,10 +19,14 @@
  *   getStringLength(null) => 0
  *   getStringLength(undefined) => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  if (value === null || value === undefined) {
+    return 0;
+  }
+  return value.length;
 }
 
+// [x] Ready
 /**
  * Returns true if the value is a string, otherwise returns false.
  *
@@ -37,10 +41,13 @@ function getStringLength(/* value */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  if (typeof value === 'string' || value instanceof String) {
+    return true;
+  }
+  return false;
 }
-
+// [x] Ready
 /**
  * Returns the result of concatenation of two strings.
  *
@@ -53,10 +60,10 @@ function isString(/* value */) {
  *   concatenateStrings('aa', '') => 'aa'.
  *   concatenateStrings('', 'bb') => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  return value1.concat(value2);
 }
-
+// [x] Ready
 /**
  * Returns the first character of the given string.
  *
@@ -71,7 +78,7 @@ function concatenateStrings(/* value1, value2 */) {
 function getFirstChar(/* value */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Removes leading and trailing whitespace characters from the string.
  *
@@ -86,7 +93,7 @@ function getFirstChar(/* value */) {
 function removeLeadingAndTrailingWhitespaces(/* value */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Removes only leading whitespace characters from the string.
  *
@@ -101,7 +108,7 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
 function removeLeadingWhitespaces(/* value */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Removes only trailing whitespace characters from the string.
  *
@@ -116,7 +123,7 @@ function removeLeadingWhitespaces(/* value */) {
 function removeTrailingWhitespaces(/* value */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Returns a string that is repeated the specified number of times.
  *
@@ -133,7 +140,7 @@ function removeTrailingWhitespaces(/* value */) {
 function repeatString(/* str, times */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Remove the first occurrence of a substring from a string.
  *
@@ -149,7 +156,7 @@ function repeatString(/* str, times */) {
 function removeFirstOccurrences(/* str, value */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Remove the last occurrence of a substring from a string.
  *
@@ -165,7 +172,7 @@ function removeFirstOccurrences(/* str, value */) {
 function removeLastOccurrences(/* str, value */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Calculate the sum of character codes of the given string.
  *
@@ -181,7 +188,7 @@ function removeLastOccurrences(/* str, value */) {
 function sumOfCodes(/* str */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Checks if a string starts with a specific substring.
  *
@@ -196,7 +203,7 @@ function sumOfCodes(/* str */) {
 function startsWith(/* str, substr */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Checks if a string ends with a specific substring.
  *
@@ -211,7 +218,7 @@ function startsWith(/* str, substr */) {
 function endsWith(/* str, substr */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Returns a time string in the "mm:ss" format.
  *
@@ -228,7 +235,7 @@ function endsWith(/* str, substr */) {
 function formatTime(/* minutes, seconds */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Returns a string in reverse order.
  *
@@ -242,7 +249,7 @@ function formatTime(/* minutes, seconds */) {
 function reverseString(/* str */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Returns a string with characters in alphabetical order.
  *
@@ -257,7 +264,7 @@ function reverseString(/* str */) {
 function orderAlphabetically(/* str */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Checks if a given string contains a specified substring.
  *
@@ -273,7 +280,7 @@ function orderAlphabetically(/* str */) {
 function containsSubstring(/* str, substring */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Returns the number of vowels in the string.
  * Vowels: 'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'.
@@ -291,7 +298,7 @@ function containsSubstring(/* str, substring */) {
 function countVowels(/* str */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Returns true if the string is a palindrome; otherwise false.
  * https://en.wikipedia.org/wiki/Palindrome
@@ -308,7 +315,7 @@ function countVowels(/* str */) {
 function isPalindrome(/* str */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Find the longest word in the sentence. If there are multiple longest words,
  * the function returns the first one encountered.
@@ -324,7 +331,7 @@ function isPalindrome(/* str */) {
 function findLongestWord(/* sentence */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Returns the string where each word is reversed.
  *
@@ -338,7 +345,7 @@ function findLongestWord(/* sentence */) {
 function reverseWords(/* str */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Inverts the case of each character in the given string.
  *
@@ -353,7 +360,7 @@ function reverseWords(/* str */) {
 function invertCase(/* str */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Returns the result of string template and given parameters firstName and lastName.
  * Please do not use concatenation, use template string :
@@ -370,7 +377,7 @@ function invertCase(/* str */) {
 function getStringFromTemplate(/* firstName, lastName */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
  *
@@ -384,7 +391,7 @@ function getStringFromTemplate(/* firstName, lastName */) {
 function extractNameFromTemplate(/* value */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Remove the first and last angle brackets from tag string
  *
@@ -399,7 +406,7 @@ function extractNameFromTemplate(/* value */) {
 function unbracketTag(/* str */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Extracts e-mails from single string with e-mails list delimited by semicolons
  *
@@ -418,7 +425,7 @@ function unbracketTag(/* str */) {
 function extractEmails(/* str */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
@@ -438,7 +445,7 @@ function extractEmails(/* str */) {
 function encodeToRot13(/* str */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 /**
  * Returns playid card id.
  *
@@ -466,7 +473,7 @@ function encodeToRot13(/* str */) {
 function getCardId(/* value */) {
   throw new Error('Not implemented');
 }
-
+// [ ] To do
 module.exports = {
   getStringLength,
   isString,
