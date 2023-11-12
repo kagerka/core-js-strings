@@ -180,10 +180,21 @@ function removeFirstOccurrences(str, value) {
  *   removeLastOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeLastOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeLastOccurrences(str, value) {
+  const valIndex = str.lastIndexOf(value);
+  const string =
+    str.substr(0, valIndex) + str.substr(valIndex + value.length, str.length);
+  let result;
+  if (str && valIndex >= 0) {
+    result = string;
+  } else if (valIndex < 0) {
+    result = str;
+  } else {
+    result = '';
+  }
+  return result;
 }
-// [ ] To do
+// [x] Ready
 /**
  * Calculate the sum of character codes of the given string.
  *
@@ -196,10 +207,10 @@ function removeLastOccurrences(/* str, value */) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  return str ? [...str].reduce((a, b) => a + b.charCodeAt(0), 0) : 0;
 }
-// [ ] To do
+// [x] Ready
 /**
  * Checks if a string starts with a specific substring.
  *
