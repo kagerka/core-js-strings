@@ -435,10 +435,12 @@ function getStringFromTemplate(firstName, lastName) {
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
  *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+function extractNameFromTemplate(value) {
+  const regExp = /[A-Z]\w*\s[A-Z]\w*/;
+  const result = value.match(regExp);
+  return result ? result[0] : '';
 }
-// [ ] To do
+// [x] Ready
 /**
  * Remove the first and last angle brackets from tag string
  *
@@ -450,10 +452,12 @@ function extractNameFromTemplate(/* value */) {
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  const regExp = /^<|>$/g;
+  const result = str.replace(regExp, '');
+  return result;
 }
-// [ ] To do
+// [x] Ready
 /**
  * Extracts e-mails from single string with e-mails list delimited by semicolons
  *
@@ -469,10 +473,10 @@ function unbracketTag(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str.split(';');
 }
-// [ ] To do
+// [x] Ready
 /**
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
@@ -489,10 +493,37 @@ function extractEmails(/* str */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const abc = 'abcdefghijklmnopqrstuvwxyz';
+  const ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const arr = str.split('');
+  const isLetter = /\w/;
+  const result = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    const func = (alphabet) => {
+      for (let j = 0; j < alphabet.length; j += 1) {
+        if (arr[i] === alphabet[j] && j < 13) {
+          result.push(alphabet[j + 13]);
+        }
+        if (arr[i] === alphabet[j] && j >= 13) {
+          result.push(alphabet[Math.abs(alphabet.length - (j + 13))]);
+        }
+      }
+    };
+
+    if (!isLetter.test(arr[i])) {
+      result.push(arr[i]);
+    }
+    if (arr[i] === arr[i].toUpperCase()) {
+      func(ABC);
+    }
+    if (arr[i] === arr[i].toLowerCase()) {
+      func(abc);
+    }
+  }
+  return result.join('');
 }
-// [ ] To do
+// [x] Ready
 /**
  * Returns playid card id.
  *
