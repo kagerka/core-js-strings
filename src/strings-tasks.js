@@ -26,7 +26,6 @@ function getStringLength(value) {
   return value.length;
 }
 
-// [x] Ready
 /**
  * Returns true if the value is a string, otherwise returns false.
  *
@@ -47,7 +46,7 @@ function isString(value) {
   }
   return false;
 }
-// [x] Ready
+
 /**
  * Returns the result of concatenation of two strings.
  *
@@ -63,7 +62,7 @@ function isString(value) {
 function concatenateStrings(value1, value2) {
   return value1.concat(value2);
 }
-// [x] Ready
+
 /**
  * Returns the first character of the given string.
  *
@@ -78,7 +77,7 @@ function concatenateStrings(value1, value2) {
 function getFirstChar(value) {
   return value ? value.charAt(0) : '';
 }
-// [x] Ready
+
 /**
  * Removes leading and trailing whitespace characters from the string.
  *
@@ -93,7 +92,7 @@ function getFirstChar(value) {
 function removeLeadingAndTrailingWhitespaces(value) {
   return value.trim();
 }
-// [x] Ready
+
 /**
  * Removes only leading whitespace characters from the string.
  *
@@ -108,7 +107,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
 function removeLeadingWhitespaces(value) {
   return value.trimStart();
 }
-// [x] Ready
+
 /**
  * Removes only trailing whitespace characters from the string.
  *
@@ -123,7 +122,7 @@ function removeLeadingWhitespaces(value) {
 function removeTrailingWhitespaces(value) {
   return value.trimEnd();
 }
-// [x] Ready
+
 /**
  * Returns a string that is repeated the specified number of times.
  *
@@ -140,7 +139,7 @@ function removeTrailingWhitespaces(value) {
 function repeatString(str, times) {
   return str && times > 0 ? str.repeat(times) : '';
 }
-// [x] Ready
+
 /**
  * Remove the first occurrence of a substring from a string.
  *
@@ -167,7 +166,7 @@ function removeFirstOccurrences(str, value) {
   }
   return result;
 }
-// [x] Ready
+
 /**
  * Remove the last occurrence of a substring from a string.
  *
@@ -194,7 +193,7 @@ function removeLastOccurrences(str, value) {
   }
   return result;
 }
-// [x] Ready
+
 /**
  * Calculate the sum of character codes of the given string.
  *
@@ -210,7 +209,7 @@ function removeLastOccurrences(str, value) {
 function sumOfCodes(str) {
   return str ? [...str].reduce((a, b) => a + b.charCodeAt(0), 0) : 0;
 }
-// [x] Ready
+
 /**
  * Checks if a string starts with a specific substring.
  *
@@ -225,7 +224,7 @@ function sumOfCodes(str) {
 function startsWith(str, substr) {
   return str.startsWith(substr);
 }
-// [x] Ready
+
 /**
  * Checks if a string ends with a specific substring.
  *
@@ -240,7 +239,7 @@ function startsWith(str, substr) {
 function endsWith(str, substr) {
   return str.endsWith(substr);
 }
-// [x] Ready
+
 /**
  * Returns a time string in the "mm:ss" format.
  *
@@ -260,7 +259,7 @@ function formatTime(minutes, seconds) {
   const result = `${minStr.padStart(2, '0')}:${secStr.padStart(2, '0')}`;
   return result;
 }
-// [x] Ready
+
 /**
  * Returns a string in reverse order.
  *
@@ -274,7 +273,7 @@ function formatTime(minutes, seconds) {
 function reverseString(str) {
   return [...str].reverse().join('');
 }
-// [x] Ready
+
 /**
  * Returns a string with characters in alphabetical order.
  *
@@ -290,7 +289,7 @@ function orderAlphabetically(str) {
   const result = [...str].sort((a, b) => a.localeCompare(b)).join('');
   return result;
 }
-// [x] Ready
+
 /**
  * Checks if a given string contains a specified substring.
  *
@@ -306,7 +305,7 @@ function orderAlphabetically(str) {
 function containsSubstring(str, substring) {
   return str.includes(substring);
 }
-// [x] Ready
+
 /**
  * Returns the number of vowels in the string.
  * Vowels: 'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'.
@@ -326,7 +325,7 @@ function countVowels(str) {
   const result = str.match(vowels) || [];
   return result.length;
 }
-// [x] Ready
+
 /**
  * Returns true if the string is a palindrome; otherwise false.
  * https://en.wikipedia.org/wiki/Palindrome
@@ -348,7 +347,7 @@ function isPalindrome(str) {
   const result = strOrig.join('') === strOrig.reverse().join('');
   return result;
 }
-// [x] Ready
+
 /**
  * Find the longest word in the sentence. If there are multiple longest words,
  * the function returns the first one encountered.
@@ -365,7 +364,7 @@ function findLongestWord(sentence) {
   const result = sentence.split(' ').sort((a, b) => b.length - a.length);
   return result[0];
 }
-// [x] Ready
+
 /**
  * Returns the string where each word is reversed.
  *
@@ -383,7 +382,7 @@ function reverseWords(str) {
     .join(' ');
   return result;
 }
-// [x] Ready
+
 /**
  * Inverts the case of each character in the given string.
  *
@@ -407,7 +406,7 @@ function invertCase(str) {
     .join(' ');
   return result;
 }
-// [x] Ready
+
 /**
  * Returns the result of string template and given parameters firstName and lastName.
  * Please do not use concatenation, use template string :
@@ -424,7 +423,7 @@ function invertCase(str) {
 function getStringFromTemplate(firstName, lastName) {
   return `Hello, ${firstName} ${lastName}!`;
 }
-// [x] Ready
+
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
  *
@@ -440,7 +439,7 @@ function extractNameFromTemplate(value) {
   const result = value.match(regExp);
   return result ? result[0] : '';
 }
-// [x] Ready
+
 /**
  * Remove the first and last angle brackets from tag string
  *
@@ -457,7 +456,7 @@ function unbracketTag(str) {
   const result = str.replace(regExp, '');
   return result;
 }
-// [x] Ready
+
 /**
  * Extracts e-mails from single string with e-mails list delimited by semicolons
  *
@@ -476,7 +475,7 @@ function unbracketTag(str) {
 function extractEmails(str) {
   return str.split(';');
 }
-// [x] Ready
+
 /**
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
@@ -523,7 +522,7 @@ function encodeToRot13(str) {
   }
   return result.join('');
 }
-// [x] Ready
+
 /**
  * Returns playid card id.
  *
@@ -548,10 +547,64 @@ function encodeToRot13(str) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const arr = [
+    'A♣',
+    '2♣',
+    '3♣',
+    '4♣',
+    '5♣',
+    '6♣',
+    '7♣',
+    '8♣',
+    '9♣',
+    '10♣',
+    'J♣',
+    'Q♣',
+    'K♣',
+    'A♦',
+    '2♦',
+    '3♦',
+    '4♦',
+    '5♦',
+    '6♦',
+    '7♦',
+    '8♦',
+    '9♦',
+    '10♦',
+    'J♦',
+    'Q♦',
+    'K♦',
+    'A♥',
+    '2♥',
+    '3♥',
+    '4♥',
+    '5♥',
+    '6♥',
+    '7♥',
+    '8♥',
+    '9♥',
+    '10♥',
+    'J♥',
+    'Q♥',
+    'K♥',
+    'A♠',
+    '2♠',
+    '3♠',
+    '4♠',
+    '5♠',
+    '6♠',
+    '7♠',
+    '8♠',
+    '9♠',
+    '10♠',
+    'J♠',
+    'Q♠',
+    'K♠',
+  ];
+  return arr.indexOf(value);
 }
-// [ ] To do
+
 module.exports = {
   getStringLength,
   isString,
