@@ -321,10 +321,12 @@ function containsSubstring(str, substring) {
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {
-  throw new Error('Not implemented');
+function countVowels(str) {
+  const vowels = /[aeiouy]/gi;
+  const result = str.match(vowels) || [];
+  return result.length;
 }
-// [ ] To do
+// [x] Ready
 /**
  * Returns true if the string is a palindrome; otherwise false.
  * https://en.wikipedia.org/wiki/Palindrome
@@ -338,10 +340,15 @@ function countVowels(/* str */) {
  *   isPalindrome('apple') => false
  *   isPalindrome('No lemon, no melon') => true
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  const strOrig = str
+    .replace(/[^a-z]/gi, '')
+    .toLowerCase()
+    .split('');
+  const result = strOrig.join('') === strOrig.reverse().join('');
+  return result;
 }
-// [ ] To do
+// [x] Ready
 /**
  * Find the longest word in the sentence. If there are multiple longest words,
  * the function returns the first one encountered.
@@ -354,10 +361,11 @@ function isPalindrome(/* str */) {
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
  */
-function findLongestWord(/* sentence */) {
-  throw new Error('Not implemented');
+function findLongestWord(sentence) {
+  const result = sentence.split(' ').sort((a, b) => b.length - a.length);
+  return result[0];
 }
-// [ ] To do
+// [x] Ready
 /**
  * Returns the string where each word is reversed.
  *
@@ -368,10 +376,14 @@ function findLongestWord(/* sentence */) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  const result = str
+    .split(' ')
+    .map((a) => a.split('').reverse().join(''))
+    .join(' ');
+  return result;
 }
-// [ ] To do
+// [x] Ready
 /**
  * Inverts the case of each character in the given string.
  *
